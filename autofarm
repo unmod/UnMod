@@ -1,0 +1,106 @@
+local library = loadstring(game:HttpGet("https://pastebin.com/raw/7Z6TzFnv", true))()
+local magnetsim = library:CreateWindow({
+  text = "Autofarm"
+})
+ 
+local credits = library:CreateWindow({text='Credits'})
+credits:AddLabel("Credits\nUnMod#8682 \n\n")
+ 
+local autobuy = library:CreateWindow({
+  text = "Autobuy"
+})
+ 
+user = game.Players.LocalPlayer
+ 
+-- Auto Sell Underneath
+ 
+_G.AutoSell = false
+magnetsim:AddToggle("Auto Sell", function(state)
+    wait()
+    _G.AutoSell = not _G.AutoSell
+    wait()
+    while _G.AutoSell == true do
+        game:GetService("Workspace").Rings.Sellx2.Transparency = 0
+        wait()
+        game:GetService("Workspace").Rings.Sellx2.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        wait()
+        game:GetService("Workspace").Rings.Sellx2.CFrame = game:GetService("Workspace").Rings.Sellx2.CFrame
+        wait()
+    end
+    while _G.AutoSell == false do
+        game:GetService("Workspace").Rings.Sellx2.CFrame = game.Workspace.Rings.Shop.CFrame
+        wait()
+    end
+    wait()
+end)
+ 
+_G.AutoFarm = false
+magnetsim:AddToggle("Auto Coin", function(state)
+    _G.AutoFarm = not _G.AutoFarm
+    while _G.AutoFarm == true do
+        wait()
+        game:GetService('ReplicatedStorage').Events.MagnetEvents['requestGrab']:FireServer("22000000", game.ReplicatedStorage.Tools["Spooky Long Power Magnet"])
+        wait()
+    end
+end)
+ 
+-- Auto Buy Magnet
+ 
+_G.AutoBuyMagnet = false
+autobuy:AddToggle("Auto Buy Magnet", function(state)
+    _G.AutoBuyMagnet = not _G.AutoBuyMagnet
+    while _G.AutoBuyMagnet == true do
+        wait()
+        function AbMag(magnet)
+            local string_1 = magnet;
+            local string_2 = "Magnet";
+            local Target = game:GetService("ReplicatedStorage").Events.ShopEvents.requestBuy;
+            Target:FireServer(string_1, string_2);
+        end
+        wait()
+        AbMag("Silver Magnet")
+        wait()
+        AbMag("Gold Magnet")
+        wait()
+        AbMag("Diamond Magnet")
+        wait()
+        AbMag("Emerald Magnet")
+        wait()
+        AbMag("Long Magnet")
+        wait()
+        AbMag("Golden Long Magnet")
+        wait()
+        AbMag("Diamond Long Magnet")
+        wait()
+        AbMag("Emerald Long Magnet")
+        wait()
+        AbMag("Sapphire Long Magnet")
+        wait()
+        AbMag("Majestic Magnet")
+        wait()
+        AbMag("Adurite Magnet")
+        wait()
+        AbMag("Crystal Magnet")
+        wait()
+        AbMag("Magnetite Magnet")
+        wait()
+        AbMag("Meteorite Magnet")
+        wait()
+        AbMag("Pink Diamond Magnet")
+        wait()
+        AbMag("Spirit Magnet")
+        wait()
+        AbMag("Fire Magnet")
+        wait()
+        AbMag("Water Magnet")
+        wait()
+        AbMag("Quartz Magnet")
+        wait()
+        AbMag("Adurite Long Magnet")
+        wait()
+        AbMag("Crystal Long Magnet")
+        wait()
+        AbMag("Spirit Long Magnet")
+        wait()
+    end
+end)
