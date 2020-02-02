@@ -20,7 +20,7 @@ magnetsim:AddToggle("Auto Sell", function(state)
     _G.AutoSell = not _G.AutoSell
     wait()
     while _G.AutoSell == true do
-        game:GetService("Workspace").Rings.Sellx2.Transparency = 0
+        game:GetService("Workspace").Rings.Sellx2.Transparency = 1
         wait()
         game:GetService("Workspace").Rings.Sellx2.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         wait()
@@ -29,6 +29,8 @@ magnetsim:AddToggle("Auto Sell", function(state)
     end
     while _G.AutoSell == false do
         game:GetService("Workspace").Rings.Sellx2.CFrame = game.Workspace.Rings.Shop.CFrame
+        wait()
+        game:GetService("Workspace").Rings.Sellx2.Transparency = 1
         wait()
     end
     wait()
